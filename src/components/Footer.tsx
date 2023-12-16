@@ -1,7 +1,9 @@
 import { FC } from 'react'
 const Footer: FC = () => {
     return (
-        <div>Footer</div>
+        <div className='flex justify-end text-red-500'>
+            <p>Todos los derechos reservados</p>
+        </div>
     )
 }
 
