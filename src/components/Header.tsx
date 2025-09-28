@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import {Link, Outlet } from 'react-router-dom'
 const Header: FC = () => {
     return (
         <div className='flex justify-center'>
@@ -6,11 +7,16 @@ const Header: FC = () => {
                 <h1>IMAGE <strong>SEARCH</strong></h1>
                 <nav>
                     <ul className='flex gap-4 flex-row'>
-                        <li>Home</li>
+                        <Link to='/'>Home</Link>
+                        <Link to='/about'>About</Link>
+                        <Link to='/contact'>Contact</Link>
+                        
+{/*                         <li>Home</li>
                         <li>About</li>
                         <li>Contact</li>
-                    </ul>
+ */}                </ul>
                 </nav>
+                <Outlet/>
             </div>
         </div>
     )

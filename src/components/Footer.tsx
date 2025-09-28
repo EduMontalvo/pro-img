@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { Link } from 'react-router-dom'
 import { AiFillFacebook  , AiFillTwitterSquare , AiFillYoutube , AiFillInstagram  } from "react-icons/ai";
 const Footer: FC = () => {
     return (
@@ -14,10 +15,10 @@ const Footer: FC = () => {
                     </div>
                     <div className='w-1/12'> {/* w-1/5 */}
                         <h2 className='font-bold pb-2'>Quick Links</h2>
-                        <ul>
-                            <li className='py-2'>Home</li>
-                            <li className='py-2'>About</li>
-                            <li className='py-2'>Contact</li>
+                        <ul className='flex flex-col'>
+                            <Link to='/' className='py-2' >Home</Link>
+                            <Link to='/about' className='py-2' >About</Link>
+                            <Link to='/contact' className='py-2' >Contact</Link>
                         </ul>
                     </div>
                     <div className='w-1/12'>

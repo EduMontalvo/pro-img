@@ -1,13 +1,25 @@
-
+import { useState } from "react"
 const Hero = () => {
+
+    const [busquedas,setBusquedas] = useState([]);
+
+    const capturar = (event) => {
+        setBusquedas(event.target.value);
+        console.log(busquedas);
+    };
+
+    const handleBlur = () => {
+        console.log('la palabra que se obtuvo es :',busquedas);
+    }
+
     return (
         <>
             <div className="w-full relative">
-                <img className="h-96 w-full object-cover" src="https://images.pexels.com/photos/2784759/pexels-photo-2784759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
+                <img className="h- w-full object-cover" src="https://images.pexels.com/photos/2784759/pexels-photo-2784759.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="" />
                 <div className="bg-black/40 absolute top-0 left-0 h-full w-full"></div>
                 <div className="absolute left-16 top-1/4 flex flex-col">
                     <h1 className="text-5xl text-white pb-5">Search you photos here</h1>
-                    <input className="w-96 p-3 rounded-full" type="text" />
+                    <input value={busquedas} onChange={capturar} onBlur={handleBlur} className="w-96 p-3 rounded-full" type="text" />
                     <div className="flex space-x-2 pl-5 pt-2">
                         <p className="text-white">Popular:</p>
                         <button className="text-white underline">Beach</button>
